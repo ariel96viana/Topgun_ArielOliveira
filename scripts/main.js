@@ -7,6 +7,19 @@ document.addEventListener("DOMContentLoaded", function () {
   const heroCloseBtn = document.querySelector(".close");
   const videoContainer = document.querySelector(".hero__content__video");
   const iframe = document.getElementsByTagName("iframe")[0];
+  const enBtn = document.querySelector(".en");
+  const ptBtn = document.querySelector(".pt");
+  const ptText = document.querySelector(".portuguese-text");
+  const enText = document.querySelector(".english-text");
+
+  enBtn.addEventListener("click", function () {
+    ptText.classList.add("d-none");
+    enText.classList.remove("d-none");
+  });
+  ptBtn.addEventListener("click", function () {
+    ptText.classList.remove("d-none");
+    enText.classList.add("d-none");
+  });
 
   window.addEventListener("scroll", function () {
     const positionY = window.scrollY;

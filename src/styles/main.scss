@@ -4,6 +4,7 @@
 @use "pilots";
 @use "fabBtn";
 @use "footer";
+@use "resume";
 
 @font-face {
   font-family: Vandal;
@@ -29,6 +30,7 @@
 
 body {
   font-family: Migontama, sans-serif;
+  background-color: variables.$backgroundColor;
 }
 
 p,
