@@ -1,0 +1,40 @@
+@use "variables";
+
+header {
+  background-color: #323232;
+
+  img {
+    width: 250px;
+
+    @media (max-width: 366px) {
+      width: 190px;
+    }
+  }
+
+  .navbar-nav .nav-link {
+    color: variables.$mainTextColor;
+  }
+
+  .nav-link {
+    text-align: center;
+    p {
+      margin: 0 auto;
+      width: 150px;
+      padding: 8px;
+      border: 2px solid variables.$mainTextColor;
+      border-radius: 4px;
+
+      &:hover {
+        background-color: variables.$headerColor;
+        color: variables.$primaryButtonBackgroundColor;
+        border-color: variables.$primaryButtonBackgroundColor;
+      }
+    }
+
+    @media (max-width: 767px) {
+      p {
+        width: 100%;
+      }
+    }
+  }
+}
