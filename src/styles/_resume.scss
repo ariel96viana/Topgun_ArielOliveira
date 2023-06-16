@@ -15,12 +15,13 @@
     text-align: center;
 
     &__title {
+      color: #c1c1c1;
       display: flex;
       align-items: center;
       gap: 40px;
 
       button {
-        background-color: variables.$mainTextColor;
+        background-color: c1c1c1;
         color: variables.$backgroundColor;
         border: none;
         border-radius: 4px;

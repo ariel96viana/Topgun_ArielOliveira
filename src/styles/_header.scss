@@ -11,6 +11,10 @@ header {
     }
   }
 
+  .navbar-toggler {
+    background-color: variables.$mainTextColor;
+  }
+
   .navbar-nav .nav-link {
     color: variables.$mainTextColor;
   }

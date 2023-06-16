@@ -48,3 +48,88 @@
     }
   }
 }
+
+#fade,
+#modal {
+  transition: 0.5s;
+  opacity: 1;
+  pointer-events: all;
+}
+
+#fade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: variables.$mainTextColor;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+#open-modal {
+  background-color: variables.$secondaryTextColor;
+
+  &:hover {
+    opacity: 0.95;
+  }
+}
+#modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  background-color: variables.$backgroundColor;
+  width: 80%;
+  height: 80%;
+  padding: 1.2rem;
+  border-radius: 8px;
+
+  @media (max-width: 768px) {
+    width: 98%;
+    height: 98%;
+
+    .modal__header {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 485px) {
+    h2 {
+      font-size: 36px;
+    }
+  }
+  @media (max-height: 516px) {
+    h2 {
+      display: none;
+    }
+  }
+}
+.modal__header {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.modal__body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  iframe {
+    margin: 0 auto;
+    width: 80%;
+    height: 65%;
+  }
+}
+
+#modal.hide,
+#fade.hide {
+  opacity: 0;
+  pointer-events: none;
+}

@@ -8,14 +8,29 @@ document.addEventListener("DOMContentLoaded", function () {
   const favBtn = document.querySelector(".fabBtn");
   const pilotSection = document.querySelector(".container-pilots");
   const pilotCarousel = document.querySelector(".pilots-carousel");
-  const heroWatchBtn = document.querySelector(".watch");
-  const heroCloseBtn = document.querySelector(".close");
-  const videoContainer = document.querySelector(".hero__content__video");
-  const iframe = document.getElementsByTagName("iframe")[0];
   const enBtn = document.querySelector(".en");
   const ptBtn = document.querySelector(".pt");
   const ptText = document.querySelector(".portuguese-text");
   const enText = document.querySelector(".english-text");
+  const openModalButton = document.querySelector("#open-modal");
+  const closeModalButton = document.querySelector("#close-modal");
+  const modal = document.querySelector("#modal");
+  const fade = document.querySelector("#fade");
+  const iframe = document.getElementsByTagName("iframe")[0];
+
+  const toggleModal = () => {
+    modal.classList.toggle("hide");
+    fade.classList.toggle("hide");
+  };
+
+  [openModalButton, closeModalButton, fade].forEach((element) => {
+    element.addEventListener("click", () => toggleModal());
+  });
+  [closeModalButton, fade].forEach((element) => {
+    element.addEventListener("click", function () {
+      iframe.src = "https://www.youtube.com/embed/qSqVVswa420";
+    });
+  });
 
   enBtn.addEventListener("click", function () {
     ptText.classList.add("d-none");
@@ -57,18 +72,5 @@ document.addEventListener("DOMContentLoaded", function () {
       pilotSection.classList.remove("d-none");
       console.log("alô");
     }
-  });
-
-  heroWatchBtn.addEventListener("click", function () {
-    videoContainer.classList.remove("d-none");
-    heroWatchBtn.classList.add("d-none");
-    heroCloseBtn.classList.remove("d-none");
-  });
-
-  heroCloseBtn.addEventListener("click", function () {
-    videoContainer.classList.add("d-none");
-    heroWatchBtn.classList.remove("d-none");
-    heroCloseBtn.classList.add("d-none");
-    iframe.src = "https://www.youtube.com/embed/qSqVVswa420";
   });
 });

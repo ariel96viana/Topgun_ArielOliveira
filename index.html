@@ -58,10 +58,21 @@
 
     <section class="hero" id="heroId">
       <div class="hero__content">
-        <button class="hero-btn watch title--normal">Watch Trailer</button>
-        <button class="hero-btn close title--normal d-none">Close</button>
+        <button id="open-modal" class="hero-btn watch title--normal">Watch Trailer</button>
+        <div id="fade" class="hide"></div>
+        <div id="modal" class="hide">
+          <div class="modal__header">
+            <h2 class="title--big">TopGun - Trailer</h2>
+            <button id="close-modal" class="hero-btn close title--normal">Close</button>
+          </div>
+          <div class="modal__body">
+            <iframe src="https://www.youtube.com/embed/qSqVVswa420" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            
+          </div>
+        </div>
+        
         <div class="hero__content__video d-none">
-          <iframe src="https://www.youtube.com/embed/qSqVVswa420" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          
         </div>
         
         </div>
